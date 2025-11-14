@@ -2,14 +2,18 @@ AI Chatbot Project - Complete Details
 📋 Project Ki Complete Details
 🎯 Project Kya Hai?
 Ek simple AI chatbot website jisme:
-
 User signup/login kar sakta hai
-
 User AI se baat kar sakta hai (OpenAI use karega)
-
 Chat history save nahi hogi
-
 Simple aur clean design
+
+
+
+
+
+
+Flow of website:
+
 
 [User Browser] 
       │
