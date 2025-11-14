@@ -11,81 +11,67 @@ Chat history save nahi hogi
 
 Simple aur clean design
 
-🛠️ Technology Stack
-Backend (Server Side):
-
-Node.js - Server ke liye
-
-Express.js - Web framework
-
-MongoDB - Database
-
-JWT - Security tokens
-
-OpenAI API - AI ke liye
-
-Frontend (User Side):
-
-HTML - Page structure
-
-CSS - Styling
-
-JavaScript - Functionality
-
-🔐 Security Features
-Passwords encrypted honge
-
-JWT tokens for session management
-
-API keys secure rahenge
-
-📱 Design Requirements
-Mobile friendly
-
-Simple aur clean look
-
-Easy to use
-
-⏰ Timeline
-Total Time: 3-4 weeks
-
-Week 1: Backend setup
-
-Week 2: Frontend development
-
-Week 3: Integration & testing
-
-Week 4: Final touches
-
-🎯 Success Criteria
-Project successful tab mana jayega jab:
-
-✅ User signup/login kar paye
-
-✅ AI se properly baat kar paye
-
-✅ Mobile par work kare
-
-✅ No major bugs
-
-✅ Secure hai
-
-💰 Cost
-Sab kuch FREE hai
-
-MongoDB Atlas - FREE tier
-
-
-🎓 Learning Outcomes
-Har developer ko milega:
-
-Team collaboration experience
-
-Specific technology expertise
-
-Project management understanding
-
-Problem solving skills
+[User Browser] 
+      │
+      ▼
+[frontend/index.html] ──> Shows homepage with buttons
+      │
+      ▼
+  User clicks "Signup" or "Login"
+      │
+      ▼
+───────────────────────────────
+[Signup Flow]                    [Login Flow]
+───────────────────────────────
+[frontend/signup.html]           [frontend/login.html]
+      │                              │
+      ▼                              ▼
+[frontend/js/signup.js]           [frontend/js/login.js]
+      │                              │
+      ▼                              ▼
+POST /signup → [backend/routes/authRoutes.js]      POST /login → [backend/routes/authRoutes.js]
+      │                              │
+      ▼                              ▼
+[backend/controllers/authController.js] (signup logic / login logic)
+      │                              │
+      ▼                              ▼
+[backend/models/User.js] (User data)          [backend/models/User.js] (User data)
+      │                              │
+      ▼                              ▼
+[backend/config/db.js] (DB connection)         [backend/config/db.js] (DB connection)
+      │                              │
+      ▼                              ▼
+Response → [frontend/js/signup.js / login.js]  Response → [frontend/js/login.js]
+      │                              │
+      ▼                              ▼
+Token saved in localStorage (for login)
+      │
+      ▼
+───────────────────────────────
+[Chat Flow] 
+───────────────────────────────
+User navigates to: [frontend/chat.html]
+      │
+      ▼
+[frontend/js/chat.js] ──> Collects message & token
+      │
+      ▼
+POST /ask → [backend/routes/chatRoutes.js]
+      │
+      ▼
+[backend/middleware/authMiddleware.js] ──> Verify JWT
+      │
+      ▼
+[backend/controllers/chatController.js] ──> Call OpenAI API
+      │
+      ▼
+AI Response Received
+      │
+      ▼
+Response → [frontend/js/chat.js] ──> Display message in chat UI
+      │
+      ▼
+[frontend/chat.html] ──> Updated with user & AI messages
 
 
 
@@ -161,6 +147,7 @@ M.Abdul-Rasheed:
 Layout Banana ha or acha design select karna ha
 Or sab files ka same design ho or bootstrap ko use karna ha
 Is ki ilawa Testing all Project and workflow
+Version control and github
 
 
 
