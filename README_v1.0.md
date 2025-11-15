@@ -70,17 +70,12 @@ The README below is a polished, developer-friendly reference that includes a cle
 
 ## Architecture & Flow
 
-Below is a cleaned-up flowchart using Mermaid. GitHub now supports Mermaid diagrams in Markdown; if yours does not render, enable "Allow Merlin" style diagram rendering in your repo settings or view with a Mermaid-capable editor.
+## 📊 Project Flow (Dark Mode)
 
-```mermaid
-flowchart TD
-  subgraph Frontend
-    A[User Browser]
-    A --> B[frontend/index.html]
-    B -->|Click Signup| C[frontend/signup.html]
-    B -->|Click Login| D[frontend/login.html]
-    B -->|Open Chat (if logged in)| E[frontend/chat.html]
-  end
+Below is the complete flow of the AI Chatbot system — from user interaction to backend processing and AI response.
+
+![AI Chatbot Flowchart – Dark Mode](assets/images/flowchart-dark.png)
+
 
   subgraph Frontend_Scripts
     C --> F[frontend/js/signup.js]
@@ -123,32 +118,34 @@ flowchart TD
 
 ```
 ai-chatbot-project/
+├── assets/
+│ └── images/
+│ └── flowchart-dark.png
 ├── frontend/
-│   ├── index.html
-│   ├── login.html
-│   ├── signup.html
-│   ├── chat.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       ├── login.js
-│       ├── signup.js
-│       └── chat.js
+│ ├── index.html
+│ ├── login.html
+│ ├── signup.html
+│ ├── chat.html
+│ ├── css/
+│ │ └── style.css
+│ └── js/
+│ ├── login.js
+│ ├── signup.js
+│ └── chat.js
 ├── backend/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   └── chatController.js
-│   ├── models/
-│   │   └── User.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   └── chatRoutes.js
-│   ├── middleware/
-│   │   └── authMiddleware.js
-│   └── server.js
-└── README.md
+│ ├── config/
+│ │ └── db.js
+│ ├── controllers/
+│ │ ├── authController.js
+│ │ └── chatController.js
+│ ├── models/
+│ │ └── User.js
+│ ├── routes/
+│ │ ├── authRoutes.js
+│ │ └── chatRoutes.js
+│ ├── middleware/
+│ │ └── authMiddleware.js
+│ └── server.js
 ```
 
 ---
