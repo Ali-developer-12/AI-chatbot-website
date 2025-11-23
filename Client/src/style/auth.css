@@ -1,0 +1,145 @@
+/* === Dark Theme Styles === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#1f1c2c,#928dab);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.signup-container {
+  max-width:480px;
+  width:100%;
+}
+
+.signup-card {
+  background:#2c2c2c;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card-header {
+  background: linear-gradient(45deg,#3b3b3b,#1a1a1a);
+  text-align:center;
+  padding:1.5rem;
+}
+
+.card-header h2 {
+  color:#fff;
+  font-weight:700;
+  margin-bottom:0.25rem;
+}
+
+.card-header p {
+  color: rgba(255,255,255,0.7);
+  font-size:0.9rem;
+  margin-bottom:0;
+}
+
+.card-body {
+  padding:1.5rem;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Inputs */
+.form-control {
+  border-radius:70px; /* pill style */
+  padding:0.6rem 1.5rem;
+  border:1px solid #555;
+  background:#1e1e1e;
+  color:#fff;
+  transition:all 0.3s;
+}
+
+.form-control:focus {
+  border-color:#4e73df;
+  box-shadow:0 0 0 0.2rem rgba(78,115,223,0.3);
+  background:#1e1e1e;
+  color:#fff;
+}
+
+.form-control::placeholder {
+  color:#fff;
+  opacity:0.7;
+}
+
+.form-label {
+  font-weight:600;
+  font-size:0.9rem;
+  color:#ccc;
+  margin-bottom:0.4rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background:linear-gradient(45deg,#4e73df,#224abe);
+  border:none;
+  border-radius:50px;
+  font-weight:600;
+  padding:0.6rem;
+  transition:all 0.3s;
+}
+
+.btn-primary:hover {
+  transform:translateY(-1px);
+  box-shadow:0 3px 10px rgba(78,115,223,0.5);
+}
+
+/* Social buttons */
+.social-btn {
+  border-radius:50px;
+  padding:0.6rem;
+  font-weight:600;
+  border:2px solid #555;
+  background:#1e1e1e;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.social-btn:hover {
+  transform:translateY(-1px);
+  box-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+
+.btn-google:hover { border-color:#db4437; background:#2a2a2a; }
+.btn-github:hover { border-color:#333; background:#2a2a2a; }
+
+.social-icon { width:16px; text-align:center; margin-right:8px; }
+
+/* Divider */
+.divider {
+  display:flex;
+  align-items:center;
+  text-align:center;
+  margin:1rem 0;
+  color:#aaa;
+  font-size:0.8rem;
+}
+
+.divider::before,
+.divider::after {
+  content:'';
+  flex:1;
+  border-bottom:1px solid #555;
+}
+
+.divider span { padding:0 0.8rem; font-weight:500; }
+
+/* Checkbox and links */
+.form-check-label { color:#fff; }
+.links-section {
+  margin-top:1rem;
+  text-align:center;
+  font-size:0.85rem;
+  color:#ccc;
+}
+.login-link { color:#4e73df; text-decoration:none; }
+.login-link:hover { text-decoration:underline; }
