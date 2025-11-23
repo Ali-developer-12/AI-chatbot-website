@@ -1,103 +1,122 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap import
-import './auth.css';
+import React from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import '../../styles/bootstrap.min.css';
+import '../../styles/auth.css';
 
-const Signup = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    agreeTerms: false
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if(formData.password !== formData.confirmPassword){
-      alert("Passwords do not match!");
-      return;
-    }
-    alert("🎉 Account created successfully!");
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      agreeTerms: false
-    });
-  };
-
+const SignupForm = ({ formData, handleChange, handleSubmit, loading }) => {
   return (
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="signup-card col-12 col-sm-10 col-md-8 col-lg-6">
-        <div className="card-header">
-          <h2>Create Account</h2>
-          <p>Join our community today</p>
-        </div>
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
-            <div className="row">
-              <div className="col-md-6 mb-2">
-                <label className="form-label" htmlFor="firstName">First Name *</label>
-                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="form-control" placeholder="Enter first name" required />
-              </div>
-              <div className="col-md-6 mb-2">
-                <label className="form-label" htmlFor="lastName">Last Name *</label>
-                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="form-control" placeholder="Enter last name" required />
-              </div>
-            </div>
-
-            <div className="mb-2">
-              <label className="form-label" htmlFor="email">Email *</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} className="form-control" placeholder="Enter your email" required />
-            </div>
-
-            <div className="mb-2">
-              <label className="form-label" htmlFor="password">Password *</label>
-              <input type="password" name="password" value={formData.password} onChange={handleChange} className="form-control" placeholder="Create password" required />
-            </div>
-
-            <div className="mb-3">
-              <label className="form-label" htmlFor="confirmPassword">Confirm Password *</label>
-              <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="form-control" placeholder="Confirm password" required />
-            </div>
-
-            <div className="mb-3 form-check">
-              <input type="checkbox" name="agreeTerms" checked={formData.agreeTerms} onChange={handleChange} className="form-check-input" id="agreeTerms" required />
-              <label className="form-check-label" htmlFor="agreeTerms">
-                I agree to <a href="#" className="login-link">Terms</a> and <a href="#" className="login-link">Privacy</a>
-              </label>
-            </div>
-
-            <div className="d-grid mb-3">
-              <button type="submit" className="btn btn-primary">Create Account</button>
-            </div>
-
-            <div className="divider"><span>or continue with</span></div>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-between">
-              <a href="#" className="social-btn btn-google mb-2 mb-md-0"><FaGoogle className="social-icon"/>Google</a>
-              <a href="#" className="social-btn btn-github"><FaGithub className="social-icon"/>GitHub</a>
-            </div>
-          </form>
-
-          <div className="links-section mt-3">
-            Already have an account? <a href="#" className="login-link">Sign In</a>
+    <div className="signup-card">
+      <div className="card-header">
+        <h2>Create Account</h2>
+        <p>Join our community today</p>
+      </div>
+      <div className="card-body">
+        <form onSubmit={handleSubmit}>
+          <div className="mb-2">
+            <label htmlFor="firstName" className="form-label">First Name *</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              className="form-control"
+              placeholder="Enter first name"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
           </div>
+
+          <div className="mb-2">
+            <label htmlFor="lastName" className="form-label">Last Name *</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              className="form-control"
+              placeholder="Enter last name"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-2">
+            <label htmlFor="email" className="form-label">Email *</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="form-control"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-2">
+            <label htmlFor="password" className="form-label">Password *</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              className="form-control"
+              placeholder="Create password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="confirmPassword" className="form-label">Confirm Password *</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              className="form-control"
+              placeholder="Confirm password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3 form-check">
+            <input
+              type="checkbox"
+              name="agreeTerms"
+              id="agreeTerms"
+              className="form-check-input"
+              checked={formData.agreeTerms}
+              onChange={handleChange}
+              required
+            />
+            <label className="form-check-label" htmlFor="agreeTerms">
+              I agree to <a href="#" className="login-link">Terms</a> and <a href="#" className="login-link">Privacy</a>
+            </label>
+          </div>
+
+          <div className="d-grid mb-3">
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? 'Creating Account...' : 'Create Account'}
+            </button>
+          </div>
+
+          <div className="divider"><span>or continue with</span></div>
+
+          <div className="social-buttons-row">
+            <a href="#" className="social-btn btn-google"><FaGoogle className="social-icon"/>Google</a>
+            <a href="#" className="social-btn btn-github"><FaGithub className="social-icon"/>GitHub</a>
+          </div>
+        </form>
+
+        <div className="links-section">
+          Already have an account? <a href="#" className="login-link">Sign In</a>
         </div>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default SignupForm;

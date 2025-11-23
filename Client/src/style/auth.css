@@ -2,79 +2,53 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg,#1f1c2c,#928dab);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
 }
 
-.signup-container {
-  max-width:480px;
-  width:100%;
-}
-
+/* Signup card */
 .signup-card {
   background:#2c2c2c;
   border-radius:15px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  max-width:480px;
+  width:100%;
 }
 
+/* Card header */
 .card-header {
   background: linear-gradient(45deg,#3b3b3b,#1a1a1a);
   text-align:center;
   padding:1.5rem;
 }
+.card-header h2 { color:#fff; font-weight:700; margin-bottom:0.25rem; }
+.card-header p { color: rgba(255,255,255,0.7); font-size:0.9rem; margin-bottom:0; }
 
-.card-header h2 {
-  color:#fff;
-  font-weight:700;
-  margin-bottom:0.25rem;
-}
-
-.card-header p {
-  color: rgba(255,255,255,0.7);
-  font-size:0.9rem;
-  margin-bottom:0;
-}
-
-.card-body {
-  padding:1.5rem;
-  display:flex;
-  flex-direction:column;
-}
+/* Card body */
+.card-body { padding:1.5rem; display:flex; flex-direction:column; }
 
 /* Inputs */
 .form-control {
-  border-radius:70px; /* pill style */
+  border-radius:70px;
   padding:0.6rem 1.5rem;
   border:1px solid #555;
   background:#1e1e1e;
   color:#fff;
   transition:all 0.3s;
+  width:100%;
+  margin-bottom:0.75rem;
 }
-
 .form-control:focus {
   border-color:#4e73df;
   box-shadow:0 0 0 0.2rem rgba(78,115,223,0.3);
   background:#1e1e1e;
   color:#fff;
 }
+.form-control::placeholder { color:#fff; opacity:0.7; }
 
-.form-control::placeholder {
-  color:#fff;
-  opacity:0.7;
-}
+/* Labels */
+.form-label { font-weight:600; font-size:0.9rem; color:#ccc; margin-bottom:0.4rem; }
 
-.form-label {
-  font-weight:600;
-  font-size:0.9rem;
-  color:#ccc;
-  margin-bottom:0.4rem;
-}
-
-/* Buttons */
+/* Primary button */
 .btn-primary {
   background:linear-gradient(45deg,#4e73df,#224abe);
   border:none;
@@ -83,13 +57,10 @@ body {
   padding:0.6rem;
   transition:all 0.3s;
 }
-
-.btn-primary:hover {
-  transform:translateY(-1px);
-  box-shadow:0 3px 10px rgba(78,115,223,0.5);
-}
+.btn-primary:hover { transform:translateY(-1px); box-shadow:0 3px 10px rgba(78,115,223,0.5); }
 
 /* Social buttons */
+.social-buttons-row { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:1rem; }
 .social-btn {
   border-radius:50px;
   padding:0.6rem;
@@ -97,49 +68,37 @@ body {
   border:2px solid #555;
   background:#1e1e1e;
   color:#fff;
+  text-decoration:none;
   display:flex;
   align-items:center;
   justify-content:center;
   cursor:pointer;
-  text-decoration:none;
+  transition:all 0.3s;
 }
-
-.social-btn:hover {
-  transform:translateY(-1px);
-  box-shadow:0 3px 10px rgba(0,0,0,0.3);
-}
-
+.social-btn:hover { transform:translateY(-1px); box-shadow:0 3px 10px rgba(0,0,0,0.3); }
 .btn-google:hover { border-color:#db4437; background:#2a2a2a; }
 .btn-github:hover { border-color:#333; background:#2a2a2a; }
-
 .social-icon { width:16px; text-align:center; margin-right:8px; }
 
 /* Divider */
-.divider {
-  display:flex;
-  align-items:center;
-  text-align:center;
-  margin:1rem 0;
-  color:#aaa;
-  font-size:0.8rem;
-}
-
-.divider::before,
-.divider::after {
-  content:'';
-  flex:1;
-  border-bottom:1px solid #555;
-}
-
+.divider { display:flex; align-items:center; text-align:center; margin:1rem 0; color:#aaa; font-size:0.8rem; }
+.divider::before, .divider::after { content:''; flex:1; border-bottom:1px solid #555; }
 .divider span { padding:0 0.8rem; font-weight:500; }
 
-/* Checkbox and links */
+/* Checkbox & Links */
 .form-check-label { color:#fff; }
 .links-section {
-  margin-top:1rem;
+  margin-top:auto;
+  padding:1rem 1.5rem 0;
+  border-top:1px solid #555;
   text-align:center;
   font-size:0.85rem;
   color:#ccc;
+  width:100%;
+  box-sizing:border-box;
 }
-.login-link { color:#4e73df; text-decoration:none; }
+.login-link { color:#4e73df; text-decoration:none; font-weight:600; }
 .login-link:hover { text-decoration:underline; }
+
+/* Responsive */
+@media(max-width:576px) { .social-buttons-row { grid-template-columns:1fr; } }
