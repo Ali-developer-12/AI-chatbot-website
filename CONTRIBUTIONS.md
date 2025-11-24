@@ -62,7 +62,7 @@ Add:
 
 Follow the existing structure:
 
-* `frontend/` → HTML, CSS, JS
+* `frontend/` → Components , pages , hooks , services and styles 
 * `backend/` → Express server, routes, controllers, middleware
 
 ### 🧹 Code Style
